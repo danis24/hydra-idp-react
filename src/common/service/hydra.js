@@ -21,7 +21,7 @@ const configFromFile = () => {
         endpoint: config.cluster_url,
         tokenPath: '/oauth2/token',
         authorizationPath: '/oauth2/auth',
-        scope: 'core hydra.keys.get'
+        scope: 'hydra.keys.get'
     }
 }
 
