@@ -99,7 +99,7 @@ class Hydra {
     verifyConsentChallenge(challenge) {
         warn()
         return new Promise((resolve, reject) => {
-            this.getKey('consent.challenge', 'public').then((key) => {
+            this.getKey('hydra.consent.challenge', 'public').then((key) => {
                 jwt.verify(challenge, jwkToPem(key), (error, decoded) => {
                     if (error) {
                         return reject({error: 'Could not verify consent challenge: ' + error})
@@ -113,7 +113,7 @@ class Hydra {
     generateConsentToken(subject, scopes, challenge) {
         warn()
         return new Promise((resolve, reject) => {
-            this.getKey('consent.endpoint', 'private').then((key) => {
+            this.getKey('hydra.consent.response', 'private').then((key) => {
                 const {payload: {aud, exp}}  = jwt.decode(challenge, {complete: true})
                 jwt.sign({
                     aud,
