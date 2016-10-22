@@ -18,7 +18,7 @@ const configFromFile = () => {
     return {
         clientID: config.client_id || process.env.HYDRA_CLIENT_ID,
         clientSecret: config.client_secret || process.env.HYDRA_CLIENT_SECRET,
-        endpoint: config.cluster_url|| process.env.HYDRA_CLUSTER_URL,
+        endpoint: config.cluster_url|| process.env.HYDRA_URL,
         tokenPath: '/oauth2/token',
         authorizationPath: '/oauth2/auth',
         scope: 'hydra.keys.get'
