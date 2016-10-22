@@ -11,18 +11,14 @@ require('superagent-auth-bearer')(request)
 
 const configFromFile = () => {
     const home = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME']
-    if (!fileExists(`${home}/.hydra.yml`)) {
-        return {
-            tokenPath: '/oauth2/token',
-            authorizationPath: '/oauth2/auth',
-            scope: 'hydra.keys.get'
-        }
+    let config = {}
+    if (fileExists(`${home}/.hydra.yml`)) {
+        config = yaml.safeLoad(fs.readFileSync(`${home}/.hydra.yml`, 'utf8')) || {};
     }
-    const config = yaml.safeLoad(fs.readFileSync(`${home}/.hydra.yml`, 'utf8')) || {};
     return {
-        clientID: config.client_id,
-        clientSecret: config.client_secret,
-        endpoint: config.cluster_url,
+        clientID: config.client_id || process.env.HYDRA_CLIENT_ID,
+        clientSecret: config.client_secret || process.env.HYDRA_CLIENT_SECRET,
+        endpoint: config.cluster_url|| process.env.HYDRA_CLUSTER_URL,
         tokenPath: '/oauth2/token',
         authorizationPath: '/oauth2/auth',
         scope: 'hydra.keys.get'
