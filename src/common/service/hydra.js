@@ -110,8 +110,9 @@ class Hydra {
         warn()
         return new Promise((resolve, reject) => {
             this.getKey('hydra.consent.response', 'private').then((key) => {
-                const {payload: {aud, exp}}  = jwt.decode(challenge, {complete: true})
+                const {payload: {aud, exp, jti}}  = jwt.decode(challenge, {complete: true})
                 jwt.sign({
+                    jti,
                     aud,
                     exp,
                     scp: scopes,
