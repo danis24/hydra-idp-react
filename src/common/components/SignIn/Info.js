@@ -4,7 +4,7 @@ const Info = () => (
     <div className="panel panel-info">
         <div className="panel-heading">
             This exemplary app's code is
-            {} <a href="https://github.com/ory-am/hydra-idp-react"><strong>available on GitHub.</strong></a>
+            {} <a href="https://github.com/ory/hydra-idp-react"><strong>available on GitHub.</strong></a>
         </div>
         <div className="panel-body">
             <div>

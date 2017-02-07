@@ -19,12 +19,12 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ory-am/hydra-idp-react.git"
+    "url": "git+https://github.com/ory/hydra-idp-react.git"
   },
   "bugs": {
-    "url": "https://github.com/ory-am/hydra-idp-react/issues"
+    "url": "https://github.com/ory/hydra-idp-react/issues"
   },
-  "homepage": "https://github.com/ory-am/hydra-idp-react#readme",
+  "homepage": "https://github.com/ory/hydra-idp-react#readme",
   "dependencies": {
     "babel-loader": "6.2.4",
     "babel-plugin-transform-dirname-filename": "1.1.0",
