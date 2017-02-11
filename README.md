@@ -5,7 +5,7 @@ Please be aware that documentation is still work in progress. To run this exampl
 **Note: This app isn't doing anything, the login will only work if requested by Hydra! Check out the [tutorial](https://ory-am.gitbooks.io/hydra/content/tutorial.html) for more on this.**
 
 ```
-$ docker run -d -p 3000:3000 oryam/hydra-idp-react --name my-hydra-consent-ui
+$ docker run -d -p 3000:3000 oryd/hydra-idp-react --name my-hydra-consent-ui
 
 # On Linux
 $ open http://localhost:3000/
